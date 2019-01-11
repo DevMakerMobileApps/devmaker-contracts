@@ -1,0 +1,9 @@
+pt-BR:
+  activerecord:
+    models:
+      contract: Contrato
+    attributes:
+      contract:
+        name: Nome
+        slug: URL
+

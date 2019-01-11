@@ -4,7 +4,7 @@
 
 <div class="row justify-content-between mb-3">
   <div class="col-6">
-  <%= form_tag(private_contracts_path, method: :get) do |f| %>
+  <%= form_tag(contracts_path, method: :get) do |f| %>
     <div class="input-group">
       <%= text_field_tag(:q, params[:q], class: "form-control", placeholder: 'Pesquisar') %>
       <span class="input-group-append">
@@ -17,7 +17,7 @@
   </div>
 
   <div class="col-4 text-right">
-    <%= link_to(new_contracts_path, class: "btn btn-primary" ) do %>
+    <%= link_to(new_contract_path, class: "btn btn-primary" ) do %>
       <span class="fas fa-plus"></span>&nbsp; Adicionar</button>
     <% end %>
   </div>
