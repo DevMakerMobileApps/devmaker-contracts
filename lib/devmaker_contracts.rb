@@ -3,7 +3,7 @@ require "devmaker_contracts/engine"
 module DevmakerContracts
   mattr_accessor :public_controller
   def self.public_controller
-    @@public_controller.constantize
+    (@@private_controller || "ApplicationController").constantize
   end
 
   mattr_accessor :private_controller
