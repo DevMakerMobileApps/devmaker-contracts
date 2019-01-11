@@ -1,0 +1,53 @@
+<h4 class="font-weight-bold py-3 mb-4">
+  Contratos
+</h4>
+
+<div class="row justify-content-between mb-3">
+  <div class="col-6">
+  <%= form_tag(private_contracts_path, method: :get) do |f| %>
+    <div class="input-group">
+      <%= text_field_tag(:q, params[:q], class: "form-control", placeholder: 'Pesquisar') %>
+      <span class="input-group-append">
+        <button class="btn btn-secondary" type="submit">
+          Buscar
+        </button>
+      </span>
+    </div>
+  <% end %>
+  </div>
+
+  <div class="col-4 text-right">
+    <%= link_to(new_contracts_path, class: "btn btn-primary" ) do %>
+      <span class="fas fa-plus"></span>&nbsp; Adicionar</button>
+    <% end %>
+  </div>
+</div>
+
+
+<div class="card">
+  <table class="table card-table">
+    <thead class="thead-light">
+      <tr>
+        <th>#</th>
+        <th>Nome</th>
+        <th>Slug</th>
+        <th>Criado Em</th>
+        <th>Atualizado Em</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @contracts.each do |contract| %>
+        <tr>
+          <th scope="row"><%= contract.id  %></th>
+          <td><%= link_to(contract.name, edit_contract_path(contract))  %></td>
+          <td><%= contract.slug %></td>
+          <td>
+            <%= I18n.l(contract.created_at, format: :short) %>
+          </td>
+          <td>
+            <%= I18n.l(contract.updated_at, format: :short) %>
+          </td>
+        </tr>
+      <% end %>
+  </table>
+</div>

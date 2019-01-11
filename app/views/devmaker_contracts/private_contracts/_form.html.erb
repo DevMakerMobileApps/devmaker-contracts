@@ -1,0 +1,43 @@
+<%= form_for(contract, local: true) do |f| %>
+
+  <%= render('layouts/form_record_errors', record: contract) %>
+
+  <div class="card">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="contract_name">Nome</label>
+            <%= f.text_field :name, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="contract_slug">URL</label>
+            <%= f.text_field :slug, class: 'form-control' %>
+            <small class="form-text text-muted">este será a url final do contrato. Ex: <b>tos</b> para meuserver.com/contracts/<b>tos</b></small>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="contract_content_html">Contrato</label>
+        <%= f.text_area :content_html, class: 'form-control' %>
+      </div>
+
+    </div>
+
+    <div class="card-footer d-flex justify-content-between mt-3">
+      <div>
+        <%= link_to('Voltar', contracts_path, class: 'btn btn-default') %>
+        <% if contract.persisted? %>
+          <%= link_to(contract_path(contract), method: :delete, data: { confirm: 'Você tem certeza?' },  class: 'btn btn-outline-danger icon-btn borderless') do %>
+            <span class="fas fa-trash-alt"></span>
+          <% end %>
+        <% end %>
+      </div>
+      <%= f.submit('Salvar', class: 'btn btn-primary', data: {disable_with: 'Aguarde...'} ) %>
+    </div>
+  </div>
+
+<% end %>
