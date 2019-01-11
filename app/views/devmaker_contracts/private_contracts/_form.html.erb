@@ -1,3 +1,6 @@
+<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote-bs4.css" rel="stylesheet">
+<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote-bs4.js"></script>
+
 <%= form_for(contract, local: true) do |f| %>
 
   <%= render('layouts/form_record_errors', record: contract) %>
@@ -21,7 +24,8 @@
       </div>
 
       <div class="form-group">
-        <label for="contract_content_html">Contrato</label>
+        <label for="contract_content_html">Conteúdo</label>
+        <small class="form-text text-muted">você pode colar aqui diretamente do Word</small>
         <%= f.text_area :content_html, class: 'form-control' %>
       </div>
 
@@ -41,3 +45,9 @@
   </div>
 
 <% end %>
+
+<script>
+  $(document).ready(function() {
+    $('#contract_content_html').summernote({ height: 100 });
+  });
+</script>
