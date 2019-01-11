@@ -30,7 +30,7 @@
       <tr>
         <th>#</th>
         <th>Nome</th>
-        <th>Slug</th>
+        <th>URL</th>
         <th>Criado Em</th>
         <th>Atualizado Em</th>
       </tr>
@@ -40,7 +40,7 @@
         <tr>
           <th scope="row"><%= contract.id  %></th>
           <td><%= link_to(contract.name, edit_contract_path(contract))  %></td>
-          <td><%= contract.slug %></td>
+          <td><%= link_to(show_contract_url(slug: contract.slug), show_contract_url(slug: contract.slug)) %></td>
           <td>
             <%= I18n.l(contract.created_at, format: :short) %>
           </td>
