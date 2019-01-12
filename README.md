@@ -61,7 +61,9 @@ In practice, you need to change partials like `menu.html.rb` and `header.html.rb
     ```
 
 1. DONE! You have new a private CRUD of contracts. You can create a new contract, assign a URL and paste the content directly from WORD:
+
     ![new_contract_form](docs/imgs/new_contract_form.png)
 
+1. Every contract will have a public display url using the contract URL without any layout: For example [https://your_server.com/contracts/tos](http://cartax-staging.herokuapp.com/contracts/tos)
 
 1. [Example commit](https://gitlab.com/devmaker-mobile-apps/rails/cartax/commit/74d8c921c809368323a7c83177195eb96d956ac0)
