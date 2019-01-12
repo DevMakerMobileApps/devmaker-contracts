@@ -48,6 +48,10 @@
 
 <script>
   $(document).ready(function() {
-    $('#contract_content_html').summernote({ height: 100 });
+    $('#contract_content_html').summernote();
+  });
+
+  document.addEventListener('turbolinks:load', function() {
+    $('#contract_content_html').summernote();
   });
 </script>
