@@ -1,6 +1,3 @@
-<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote-bs4.css" rel="stylesheet">
-<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote-bs4.js"></script>
-
 <%= form_for(contract, local: true) do |f| %>
 
   <%= render('layouts/form_record_errors', record: contract) %>
@@ -47,9 +44,9 @@
 <% end %>
 
 <script>
-  $(document).ready(function() {
+  $(window).on('load', function() {
     $('#contract_content_html').summernote();
-  });
+  })
 
   document.addEventListener('turbolinks:load', function() {
     $('#contract_content_html').summernote();
