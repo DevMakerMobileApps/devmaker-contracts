@@ -3,15 +3,15 @@ module DevmakerContracts
     before_action :set_contract, only: [:show, :edit, :update, :destroy]
 
     def index
-      @contracts = Contract.search_for(params[:q]).order(:id)
+      @contracts = DevmakerContracts::Contract.search_for(params[:q]).order(:id)
     end
 
     def new
-      @contract = Contract.new
+      @contract = DevmakerContracts::Contract.new
     end
 
     def create
-      @contract = Contract.new(form_params)
+      @contract = DevmakerContracts::Contract.new(form_params)
 
       if @contract.save
         redirect_to contracts_path
@@ -44,7 +44,7 @@ module DevmakerContracts
     end
 
     def set_contract
-      @contract = Contract.find(params[:id])
+      @contract = DevmakerContracts::Contract.find(params[:id])
     end
   end
 end
