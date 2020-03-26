@@ -14,7 +14,7 @@
         <div class="col-sm-6">
           <div class="form-group">
             <label for="contract_slug">URL</label>
-            <%= f.text_field :slug, class: 'form-control' %>
+            <%= f.text_field :slug, class: 'form-control', readonly: contract.persisted? %>
             <small class="form-text text-muted">Esta será a URL final do contrato. Ex: <b>tos</b> para meuserver.com/contracts/<b>tos</b></small>
           </div>
         </div>
