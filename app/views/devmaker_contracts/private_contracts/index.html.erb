@@ -2,27 +2,30 @@
   Contratos
 </h4>
 
-<div class="row justify-content-between mb-3">
-  <div class="col-6">
-  <%= form_tag(contracts_path, method: :get) do |f| %>
-    <div class="input-group">
-      <%= text_field_tag(:q, params[:q], class: "form-control", placeholder: 'Pesquisar') %>
-      <span class="input-group-append">
-        <button class="btn btn-secondary" type="submit">
-          Buscar
-        </button>
-      </span>
+<%= link_to(new_contract_path, class: "btn btn-round btn-dark mb-3" ) do %>
+  <span class="fas fa-plus"></span>&nbsp; Adicionar</button>
+<% end %>
+
+<%= form_tag(contracts_path, method: :get) do |f| %>
+  <div class="card bg-transparent mb-3">
+    <div class="card-header">Filtros</div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-sm-6">
+          <small>Termo</small>
+          <%= text_field_tag(:q, params[:q], class: "form-control", placeholder: 'Pesquisar por Nome de Contrato') %>
+        </div>
+        <div class="col-sm-2">
+          <br>
+          <button class="btn btn-outline-secondary btn-round" type="submit">
+            <span class="fas fa-search"></span>
+            Buscar
+          </button>
+        </div>
+      </div>
     </div>
-  <% end %>
   </div>
-
-  <div class="col-4 text-right">
-    <%= link_to(new_contract_path, class: "btn btn-primary" ) do %>
-      <span class="fas fa-plus"></span>&nbsp; Adicionar</button>
-    <% end %>
-  </div>
-</div>
-
+<% end %>
 
 <div class="card">
   <table class="table card-table">
