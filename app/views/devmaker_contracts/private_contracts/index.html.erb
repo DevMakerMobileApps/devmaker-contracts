@@ -2,7 +2,7 @@
   Contratos
 </h4>
 
-<%= link_to(new_contract_path, class: "btn btn-round mb-3" ) do %>
+<%= link_to(new_contract_path, class: "btn btn-primary btn-round mb-3" ) do %>
   <span class="fas fa-plus"></span>&nbsp; Adicionar</button>
 <% end %>
 
@@ -36,19 +36,28 @@
         <th>URL</th>
         <th>Criado Em</th>
         <th>Atualizado Em</th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
       <% @contracts.each do |contract| %>
         <tr>
           <th scope="row"><%= contract.id  %></th>
-          <td><%= link_to(contract.name, edit_contract_path(contract))  %></td>
+          <td><%= contract.name %></td>
           <td><%= link_to(show_contract_url(slug: contract.slug), show_contract_url(slug: contract.slug)) %></td>
           <td>
             <%= I18n.l(contract.created_at, format: :short) %>
           </td>
           <td>
             <%= I18n.l(contract.updated_at, format: :short) %>
+          </td>
+          <td width='90px'>
+            <%= link_to(edit_contract_path(contract), class: 'btn btn-primary btn-sm icon-btn') do %>
+              <span class="fas fa-edit"></span>
+            <% end %>
+            <%= link_to(contract_path(contract), method: :delete, data: { confirm: 'Você tem certeza?' },  class: 'btn btn-outline-danger btn-sm icon-btn') do %>
+              <span class="fas fa-trash-alt"></span>
+            <% end %>
           </td>
         </tr>
       <% end %>
