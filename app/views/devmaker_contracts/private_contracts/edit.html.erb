@@ -1,6 +1,6 @@
 <h4 class="font-weight-light py-3 mb-4">
-  Contratos /
-  <span class="font-weight-bold">Contrato #<%= @contract.id %></span>
+  <%= t('.heading') %> /
+  <span class="font-weight-bold"><%= t('.heading_register', id: @contract.id) %></span>
 </h4>
 
 <%= render('form', contract: @contract) %>

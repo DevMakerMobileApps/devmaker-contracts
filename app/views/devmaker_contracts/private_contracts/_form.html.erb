@@ -7,30 +7,30 @@
       <div class="row">
         <div class="col-sm-6">
           <div class="form-group">
-            <label for="contract_name">Nome *</label>
+            <label for="contract_name"><%= t('.name') %></label>
             <%= f.text_field :name, class: 'form-control', required: true %>
           </div>
         </div>
         <div class="col-sm-6">
           <div class="form-group">
-            <label for="contract_slug">URL *</label>
+            <label for="contract_slug"><%= t('.url') %></label>
             <%= f.text_field :slug, class: 'form-control', readonly: contract.persisted?, required: true %>
-            <small class="form-text text-muted">Esta será a URL final do contrato. Ex: <b>tos</b> para meuserver.com/contracts/<b>tos</b></small>
+            <small class="form-text text-muted"><%= t('.url_advice') %>. Ex: <b>tos</b> <%= t('.url_for') %> myserver.com/contracts/<b>tos</b></small>
           </div>
         </div>
       </div>
 
       <div class="form-group">
-        <label for="contract_content_html">Conteúdo *</label>
-        <small class="form-text text-muted">Você pode colar aqui diretamente do Word</small>
+        <label for="contract_content_html"><%= t('.content') %></label>
+        <small class="form-text text-muted"><%= t('.content_advice') %></small>
         <%= f.text_area :content_html, class: 'form-control', required: true %>
       </div>
 
     </div>
 
     <div class="card-footer d-flex justify-content-start mt-3">
-      <%= f.submit('Salvar', class: 'btn btn-round btn-primary mr-4', data: {disable_with: 'Aguarde...'} ) %>
-      <%= link_to('Voltar', contracts_path, class: 'btn btn-default btn-round') %>
+      <%= f.submit(t('.save'), class: 'btn btn-round btn-primary mr-4', data: {disable_with: t('.waiting')} ) %>
+      <%= link_to(t('.back'), contracts_path, class: 'btn btn-default btn-round') %>
     </div>
   </div>
 

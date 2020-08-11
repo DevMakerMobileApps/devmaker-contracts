@@ -1,0 +1,8 @@
+en:
+  activerecord:
+    models:
+      contract: Contract
+    attributes:
+      contract:
+        name: Name
+        slug: URL
