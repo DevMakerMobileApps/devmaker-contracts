@@ -1,0 +1,32 @@
+pt-BR:
+  devmaker_contracts:
+    private_contracts:
+      index:
+        heading: Contratos
+        search_placeholder: Procurar por nome
+        add: Adicionar
+        filters: Filtros
+        word: Termo
+        search: Buscar
+        email: Email
+        name: Nome
+        url: URL
+        created_at: Criado em
+        updated_at: Atualizado em
+        delete_confirmation: Você tem certeza?
+      new:
+        heading: Contratos
+        heading_register: Novo Contrato
+      edit:
+        heading: Contratos
+        heading_register: "Contrato #%{id}"
+      form:
+        back: Voltar
+        save: Salvar
+        waiting: Aguardando...
+        name: Nome *
+        url: URL *
+        url_advice: Esta será a URL final do contrato
+        url_for: para
+        content: Conteúdo *
+        content_advice: Você pode colar aqui diretamente do Word

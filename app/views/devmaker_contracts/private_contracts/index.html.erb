@@ -1,25 +1,25 @@
 <h4 class="font-weight-bold py-3 mb-4">
-  Contratos
+  <%= t('.heading') %>
 </h4>
 
 <%= link_to(new_contract_path, class: "btn btn-primary btn-round mb-3" ) do %>
-  <span class="fas fa-plus"></span>&nbsp; Adicionar</button>
+  <span class="fas fa-plus"></span>&nbsp; <%= t('.add') %></button>
 <% end %>
 
 <%= form_tag(contracts_path, method: :get) do |f| %>
   <div class="card bg-transparent mb-3">
-    <div class="card-header">Filtros</div>
+    <div class="card-header"><%= t('.filters') %></div>
     <div class="card-body">
       <div class="row">
         <div class="col-sm-6">
-          <small>Termo</small>
-          <%= text_field_tag(:q, params[:q], class: "form-control", placeholder: 'Pesquisar por Nome de Contrato') %>
+          <small><%= t('.word') %></small>
+          <%= text_field_tag(:q, params[:q], class: "form-control", placeholder: t('.search_placeholder')) %>
         </div>
         <div class="col-sm-2">
           <br>
           <button class="btn btn-outline-secondary btn-round" type="submit">
             <span class="fas fa-search"></span>
-            Buscar
+            <%= t('.search') %>
           </button>
         </div>
       </div>
@@ -32,10 +32,10 @@
     <thead class="thead-light">
       <tr>
         <th>#</th>
-        <th>Nome</th>
-        <th>URL</th>
-        <th>Criado Em</th>
-        <th>Atualizado Em</th>
+        <th><%= t('.name') %></th>
+        <th><%= t('.url') %></th>
+        <th><%= t('.created_at') %></th>
+        <th><%= t('.updated_at') %></th>
         <th></th>
       </tr>
     </thead>

@@ -1,0 +1,32 @@
+en:
+  devmaker_contracts:
+    private_contracts:
+      index:
+        heading: Contracts
+        search_placeholder: Search by name
+        add: Add
+        filters: Filters
+        word: Word
+        search: Search
+        email: Email
+        name: Name
+        url: URL
+        created_at: Created at
+        updated_at: Updated at
+        delete_confirmation: Are you sure?
+      new:
+        heading: Contracts
+        heading_register: Register
+      edit:
+        heading: Contracts
+        heading_register: "Contract #%{id}"
+      form:
+        back: Back
+        save: Save
+        waiting: Waiting...
+        name: Name *
+        url: URL *
+        url_advice: This will be the definitive URL of the contract
+        url_for: for
+        content: Content *
+        content_advice: You can past here directly from Word
