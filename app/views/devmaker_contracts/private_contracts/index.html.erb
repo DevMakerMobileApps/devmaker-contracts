@@ -52,10 +52,10 @@
             <%= I18n.l(contract.updated_at, format: :long) %>
           </td>
           <td width='90px'>
-            <%= link_to(edit_contract_path(contract), class: 'btn btn-primary btn-sm icon-btn') do %>
+            <%= link_to(edit_contract_path(contract), class: 'btn btn-default btn-sm icon-btn') do %>
               <span class="fas fa-edit"></span>
             <% end %>
-            <%= link_to(contract_path(contract), method: :delete, data: { confirm: t('.delete_confirmation') },  class: 'btn btn-outline-danger btn-sm icon-btn') do %>
+            <%= link_to(contract_path(contract), method: :delete, data: { confirm: t('.delete_confirmation') },  class: 'btn btn-outline-danger btn-sm icon-btn borderless') do %>
               <span class="fas fa-trash-alt"></span>
             <% end %>
           </td>
