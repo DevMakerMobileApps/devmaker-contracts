@@ -7,20 +7,11 @@ Specially usefull for projects that have a custom **Terms of Service** and **Pri
 ### Install:
 1. Add this line to your application's Gemfile:
     ```ruby
-    gem "devmaker_contracts", git: "https://gitlab.com/devmaker-mobile-apps/rails/devmaker_contracts.git"
+    gem "devmaker_contracts", github: 'DevMakerMobileApps/devmaker-contracts'
     ```
 1. And then execute:
     ```bash
     $ bundle
-    ```
-
-1. :warning: This is a private gem, so you need to have your local `bundler` configured with your GitLab credentials:
-    ```bash
-    $ bundle config gitlab.com YourGitLabUsername:YOUR_GITLAB_PASSWORD
-    ```
-1. :warning: Do not add your GitLab credentials at the deploy server. Use the `@devmaker-ci-cd` GitLab user instead! Heroku Example:
-    ```bash
-    $ heroku config:set BUNDLE_GITLAB__COM=devmaker-ci-cd:THE_SUPER_SECRET_PASSWORD
     ```
 
 ### Configure:
